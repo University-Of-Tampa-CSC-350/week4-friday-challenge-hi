@@ -28,6 +28,9 @@ class OutcomeFragment : Fragment() {
         val trust = viewModel.trustLevel
         val helicopterDismissed = viewModel.helicopterDismissed
 
+        val trustTextView = view.findViewById<TextView>(R.id.trustTextView)
+        trustTextView.text = "Trust Level: $trust"
+
         val titleView = view.findViewById<TextView>(R.id.textViewOutcomeTitle)
         val resultView = view.findViewById<TextView>(R.id.textViewOutcomeResult)
 

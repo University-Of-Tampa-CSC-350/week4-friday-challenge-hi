@@ -39,6 +39,16 @@
             android:text="Connor authorizes the sniper shot.\nDaniel is neutralized instantly.
 Emma is pulled to safety by responding officers.\nEmma survives, though shaken by the trauma." />
 
+        <TextView
+            android:id="@+id/trustTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trust Level: 0"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_gravity="top|end"
+            android:padding="16dp" />
+
         <LinearLayout
             android:layout_width="300dp"
             android:layout_gravity="center"
