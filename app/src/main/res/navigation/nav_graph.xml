@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/m1_97123">
+
+    <!-- Start Screen -->
+    <fragment
+        android:id="@+id/m1_97123"
+        android:name="com.kancharla.abhilash.fc_003.M1_97123"
+        android:label="Start"
+        tools:layout="@layout/fragment_m1_97123">
+        <action
+            android:id="@+id/action_start_to_missionBrief"
+            app:destination="@id/m1_58241" />
+    </fragment>
+
+    <!-- Mission Brief -->
+    <fragment
+        android:id="@+id/m1_58241"
+        android:name="com.kancharla.abhilash.fc_003.m1_58241"
+        android:label="Mission Brief"
+        tools:layout="@layout/fragment_m1_58241">
+        <action
+            android:id="@+id/action_missionBrief_to_rooftop"
+            app:destination="@id/m1_76542" />
+    </fragment>
+
+    <!-- Rooftop Confrontation -->
+    <fragment
+        android:id="@+id/m1_76542"
+        android:name="com.kancharla.abhilash.fc_003.m1_76542"
+        android:label="Rooftop Confrontation"
+        tools:layout="@layout/fragment_m1_76542">
+        <action
+            android:id="@+id/action_rooftop_to_openingDialogue"
+            app:destination="@id/m1_23961">
+            <argument
+                android:name="strategy"
+                app:argType="string" />
+        </action>
+        <action
+            android:id="@+id/action_rooftop_to_tensionReduced"
+            app:destination="@id/m1_39462">
+            <argument
+                android:name="strategy"
+                app:argType="string" />
+        </action>
+        <action
+            android:id="@+id/action_rooftop_to_escalation"
+            app:destination="@id/m1_97109">
+            <argument
+                android:name="strategy"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <!-- Opening Dialogue (after Establish Contact) -->
+    <fragment
+        android:id="@+id/m1_23961"
+        android:name="com.kancharla.abhilash.fc_003.m1_23961"
+        android:label="Opening Dialogue"
+        tools:layout="@layout/fragment_m1_23961">
+        <argument
+            android:name="strategy"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_openingDialogue_to_outcome"
+            app:destination="@id/outcomeFragment">
+            <argument
+                android:name="decisionKey"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <!-- Tension Reduced (after Helicopter Withdrawal) -->
+    <fragment
+        android:id="@+id/m1_39462"
+        android:name="com.kancharla.abhilash.fc_003.m1_39462"
+        android:label="Tension Reduced"
+        tools:layout="@layout/fragment_m1_39462">
+        <argument
+            android:name="strategy"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_tensionReduced_to_outcome"
+            app:destination="@id/outcomeFragment">
+            <argument
+                android:name="decisionKey"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <!-- Escalation (after Refuse Negotiation) -->
+    <fragment
+        android:id="@+id/m1_97109"
+        android:name="com.kancharla.abhilash.fc_003.m1_97109"
+        android:label="Escalation"
+        tools:layout="@layout/fragment_m1_97109">
+        <argument
+            android:name="strategy"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_escalation_to_outcome"
+            app:destination="@id/outcomeFragment">
+            <argument
+                android:name="decisionKey"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <!-- Single Final Outcome Fragment -->
+    <fragment
+        android:id="@+id/outcomeFragment"
+        android:name="com.kancharla.abhilash.fc_003.OutcomeFragment"
+        android:label="Outcome"
+        tools:layout="@layout/fragment_outcome">
+        <argument
+            android:name="decisionKey"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_outcome_to_start"
+            app:destination="@id/m1_97123"
+            app:popUpTo="@id/m1_97123"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+</navigation>
