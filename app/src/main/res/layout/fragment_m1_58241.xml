@@ -11,6 +11,16 @@
         android:alpha="0.5"
         android:scaleType="centerCrop"
         android:src="@drawable/kjui" />
+    <TextView
+        android:id="@+id/trustTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Trust Level: 0"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:layout_gravity="top|end"
+        android:padding="16dp" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

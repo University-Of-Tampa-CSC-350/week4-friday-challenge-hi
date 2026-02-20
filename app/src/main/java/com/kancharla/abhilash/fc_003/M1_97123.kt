@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 
@@ -26,6 +27,9 @@ class M1_97123 : Fragment() {
         viewModel.selectedStrategy = null
         viewModel.helicopterDismissed = false
         viewModel.trustLevel = 0
+
+        val trustTextView = view.findViewById<TextView>(R.id.trustTextView)
+        trustTextView.text = "Trust Level: ${viewModel.trustLevel}"
 
         view.findViewById<Button>(R.id.button).setOnClickListener {
             findNavController().navigate(R.id.action_start_to_missionBrief)
